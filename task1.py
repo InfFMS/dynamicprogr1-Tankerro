@@ -9,3 +9,17 @@
 """
 
 # Решение будет здесь
+
+steps = [0]*11
+
+steps[0] = 1
+steps[1] = 1
+i = 2
+while i <= 10:
+    if i - 4 >= 0:
+        steps[i] = steps[i-1] + steps[i-2] + steps[i-4]
+    else:
+        steps[i] = steps[i - 1] + steps[i - 2]
+    i += 1
+print(steps[10])
+
