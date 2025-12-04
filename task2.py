@@ -14,3 +14,15 @@
 PRICE = [0, 1, 2, 1, 3, 1, 2, 1, 3, 1, 2, 1, 3, 1, 2, 1] 
 
 # Решение будет здесь
+
+MIN_PRICE = [0] * 16
+MIN_PRICE[0] = 0
+MIN_PRICE[1] = 1
+i = 2
+while i <= 15:
+    if i - 4 > 0:
+        MIN_PRICE[i] = min(MIN_PRICE[i-1], MIN_PRICE[i-2], MIN_PRICE[i-4]) + PRICE[i]
+    else:
+        MIN_PRICE[i] = min(MIN_PRICE[i - 1], MIN_PRICE[i - 2]) + PRICE[i]
+    i+=1
+print(MIN_PRICE[15])

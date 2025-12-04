@@ -11,3 +11,13 @@ F(n) = n / 2 + F(n - 1) + 2 при n > 1 и n — чётно
 """
 
 # Решение будет здесь
+f_prev = 0  # F(1) = 0
+
+for n in range(2, 50):
+    if n % 2 == 1:
+        f_current = f_prev + 3 * n * n
+    else:
+        f_current = n/2 + f_prev + 2
+    f_prev = f_current
+
+print(int(f_current))
